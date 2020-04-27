@@ -34,6 +34,10 @@ export const configuration = configure<HelloWorldGoals>(async sdm => {
         },
     });
 
+    sdm.addStartupListener(async context => {
+        context.addressAdmin('Hey, The Codex Arcana SDM is here!');
+    });
+
     // Create goals and configure them
     const goals = await sdm.createGoals(HelloWorldGoalCreator, [HelloWorldGoalConfigurer]);
 
